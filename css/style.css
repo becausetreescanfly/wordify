@@ -15,6 +15,7 @@ html {
   color: #222;
   font-size: 1em;
   line-height: 1.4;
+  box-sizing: border-box;
 }
 
 /*
@@ -93,7 +94,7 @@ body {
   background: #fff;
   border-radius: 18px;
   box-shadow: 0 6px 32px 0 rgba(56, 142, 60, 0.12), 0 1.5px 8px 0 rgba(56, 142, 60, 0.08);
-  font-family: 'Segoe UI', 'Arial', sans-serif;
+  font-family: 'Segoe UI', 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
   color: #222;
   transition: box-shadow 0.2s;
 }
@@ -158,6 +159,16 @@ h1 {
   max-height: 370px;
   overflow-y: auto;
   font-size: 1.13em;
+  scrollbar-color: #a5d6a7 #f1f8e9;
+  scrollbar-width: thin;
+}
+#learn-list::-webkit-scrollbar {
+  width: 8px;
+  background: #f1f8e9;
+}
+#learn-list::-webkit-scrollbar-thumb {
+  background: #a5d6a7;
+  border-radius: 4px;
 }
 
 #category-select {
@@ -167,7 +178,6 @@ h1 {
 .category-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 1em;
   margin-top: 1.2em;
   justify-content: flex-start;
 }
@@ -183,6 +193,7 @@ h1 {
   font-weight: 500;
   transition: background 0.2s, color 0.2s;
   margin-bottom: 0.5em;
+  margin-right: 1em;
   box-shadow: 0 1px 4px rgba(56, 142, 60, 0.08);
 }
 .category-btn:disabled,
@@ -216,9 +227,8 @@ h1 {
 }
 
 .learn-grid ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1em;
+  display: flex;
+  flex-wrap: wrap;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -233,21 +243,20 @@ h1 {
   align-items: flex-start;
   min-height: 80px;
   font-size: 1em;
-  gap: 0.2em;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  width: calc(25% - 1em);
   box-shadow: 0 1px 4px rgba(56, 142, 60, 0.06);
   transition: background 0.2s;
 }
-.learn-grid li:hover {
-  background: #b2dfdb;
+@media (max-width: 900px) {
+  .learn-grid li { width: calc(33.33% - 1em); }
 }
-.learn-grid .icon {
-  margin-bottom: 0.2em;
-  font-size: 1.3em;
+@media (max-width: 700px) {
+  .learn-grid li { width: calc(50% - 1em); }
 }
-.learn-grid .de-word {
-  color: #388e3c;
-  font-size: 1em;
-  margin-top: 0.2em;
+@media (max-width: 500px) {
+  .learn-grid li { width: 100%; margin-right: 0; }
 }
 
 .learn-pagination {
