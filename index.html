@@ -26,6 +26,15 @@
 
   <main id="vocab-game">
     <h1>Deutsch Vokabeltrainer</h1>
+    <div id="mode-switch">
+      <button id="learn-mode-btn" type="button">Lernmodus</button>
+      <button id="quiz-mode-btn" type="button" class="active">Quizmodus</button>
+    </div>
+    <div id="learn-area" style="display:none;">
+      <h2>Vokabeln lernen</h2>
+      <div id="learn-list"></div>
+      <button id="start-quiz-btn" type="button">Quiz starten</button>
+    </div>
     <div id="game-container">
       <div id="question-area">
         <span id="english-word"></span>
@@ -33,8 +42,14 @@
       <div id="choices-area">
         <!-- Auswahlmöglichkeiten werden hier eingefügt -->
       </div>
+      <div id="hint-btn-wrapper">
+        <button id="hint-btn" type="button">Tipp anzeigen</button>
+      </div>
       <div id="progress-area">
         <span id="progress"></span>
+        <div id="progressbar-wrapper">
+          <div id="progressbar"></div>
+        </div>
       </div>
       <div id="result-area" style="display:none;">
         <h2>Ergebnis</h2>
@@ -44,7 +59,6 @@
     </div>
   </main>
   <script src="js/app.js"></script>
-
 </body>
 
 </html>
